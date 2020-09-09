@@ -3,7 +3,7 @@ import { Home } from './components/Home.js'
 import { About } from './components/About.js'
 import { Experiences } from './components/Experiences.js'
 import { Contact } from './components/Contact.js'
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import { Element } from 'react-scroll'
 
 class App extends Component {
