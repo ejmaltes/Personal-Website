@@ -27,6 +27,7 @@ const Styles = styled.div`
     width: 60vw;
     margin: 10px 10px 10px 15px;
     overflow: scroll;
+    font-size: 1.5rem;
   }
 `;
 
@@ -39,10 +40,7 @@ export const About = () => (
       </div>
       <div id="about-content">
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed posuere lectus, interdum molestie magna. Morbi a laoreet turpis. Sed auctor felis a libero pretium, in porta lectus sodales. Ut ut leo vitae orci imperdiet consequat. Pellentesque pellentesque elementum libero, a feugiat tellus tempus at. Pellentesque malesuada diam sed tempus convallis. Etiam cursus libero id justo pellentesque sagittis. Mauris eu ipsum tristique, interdum leo at, scelerisque dolor. Maecenas tristique pharetra sem non tempus. Aliquam erat volutpat. Mauris varius sapien sapien, quis vulputate lorem hendrerit non. Duis et mauris cursus, vehicula turpis eu, ullamcorper quam. In gravida consequat tortor, eu egestas ipsum laoreet sagittis. Donec vel congue est. Donec quis quam ut ante volutpat fringilla id in justo.
-        </p>
-        <p>
-        Morbi dapibus, nulla vitae sodales iaculis, justo nibh volutpat nisl, non rhoncus nisl tortor at dolor. Nam ullamcorper ex massa, vel ultricies quam feugiat id. Donec libero nisl, venenatis eu nunc vel, ornare viverra felis. Vivamus ac nulla purus. Vestibulum velit enim, placerat eget faucibus id, consectetur a mi. Sed sem purus, pharetra quis erat vel, ullamcorper consequat dui. Sed faucibus, metus vitae dapibus pharetra, odio eros viverra ipsum, ut gravida est risus non dolor. Nam vel ligula eu arcu consequat egestas nec vitae risus. Mauris fermentum est rhoncus, gravida sapien vel, accumsan elit. Sed hendrerit sit amet sem ac consequat.
+        Hi! My name is Ethan. I am currently a student at the University of Washington with a passion for Computer Science.  Right now my interests include full-stack web development and database management.  So far I've worked on a variety of projects on and off campus, and am excited to get involved in more!
         </p>
       </div>
     </div>
