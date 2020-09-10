@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { AboutJumbotron } from './Jumbotron.js';
 import styled from 'styled-components';
 import { Image } from 'react-bootstrap';
 import AboutIMG from '../assets/me-space-1.png';
-import { CSSTransition } from "react-transition-group";
 import Fade from 'react-reveal/Fade';
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');

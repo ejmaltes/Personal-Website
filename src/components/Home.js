@@ -12,7 +12,7 @@ const Styles = styled.div`
     font-family: "Raleway", sans-serif;
     background: url(${WelcomeBG}) no-repeat fixed center;
     background-size: cover;
-    image-rendering: pixelated;
+    image-rendering: -webkit-optimize-contrast;
     height: 100vh;
     width: 100vw;
     max-width: None;

@@ -5,8 +5,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import Fade from 'react-reveal/Fade';
-
-import ReadingIMG from '../assets/jstart.jpg';
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
