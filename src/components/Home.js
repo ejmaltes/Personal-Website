@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import WelcomeBG from '../assets/welcome-background.png';
-
 import { Link } from 'react-scroll';
+import { CSSTransition } from "react-transition-group";
 
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
   #welcome-container {
     font-family: "Raleway", sans-serif;
-    background: url(${WelcomeBG}) no-repeat fixed bottom;
+    background: url(${WelcomeBG}) no-repeat fixed center;
     background-size: cover;
+    image-rendering: pixelated;
     height: 100vh;
     width: 100vw;
     max-width: None;
@@ -63,36 +64,69 @@ const Styles = styled.div`
   p {
     margin: 0px;
   }
+
+    /* appear - on page load */
+  .appear {
+      opacity: 0;
+      z-index: 1;
+      transform: scale(0.97) translateY(5px);
+  }
+  .appear.appear-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition: opacity 500ms linear 500ms, transform 500ms ease-in-out 500ms;
+  }
 `;
 
-export const Home = () => (
-  <Styles>
-    <Container id="welcome-container">
-      <Navbar className="transparent" variant="dark">
-        <Navbar.Brand href="#">EJM</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link>
-            <Link activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-              About
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="#">
-            <Link activeClass="active" to="experiences" spy={true} smooth={true} duration={1000}>
-              Experiences
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="#">
-            <Link activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
-              Contact
-            </Link>
-          </Nav.Link>
-        </Nav>
-      </Navbar>
-      <div id="name-container">
-        <div id="name">
-          <p>Ethan Maltes</p>
-        </div>
-      </div>
-    </Container>
-  </Styles>
-)
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      appearHome: true
+    }
+  }
+
+
+  render() {
+    const { appearHome } = this.state;
+    return (
+      <Styles>
+        <Container id="welcome-container">
+          <Navbar className="transparent" variant="dark">
+            <Navbar.Brand href="#">EJM</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link>
+                <Link activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
+                  About
+                </Link>
+              </Nav.Link>
+              <Nav.Link href="#">
+                <Link activeClass="active" to="experiences" spy={true} smooth={true} duration={1000}>
+                  Experiences
+                </Link>
+              </Nav.Link>
+              <Nav.Link href="#">
+                <Link activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
+                  Contact
+                </Link>
+              </Nav.Link>
+            </Nav>
+          </Navbar>
+          <CSSTransition
+            in={appearHome}
+            appear={true}
+            timeout={2000}
+          >
+            <div id="name-container">
+              <div id="name">
+                <p>Ethan Maltes</p>
+              </div>
+            </div>
+          </CSSTransition>
+        </Container>
+      </Styles>
+    )
+  }
+}
+
+export default Home;
