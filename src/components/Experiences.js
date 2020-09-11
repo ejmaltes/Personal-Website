@@ -28,6 +28,7 @@ const Styles = styled.div`
     /* height: 25vh; */
     min-width: 400px;
     display: table;
+    margin-top: 2vh;
   }
 
   .accordion .card {

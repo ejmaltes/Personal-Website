@@ -7,7 +7,7 @@ import SeaWEBM from '../assets/sea1.webm';
 import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
-
+import ReactPlayer from 'react-player';
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
@@ -83,6 +83,7 @@ const Styles = styled.div`
       z-index: 1;
       transform: scale(0.97) translateY(5px);
   }
+
   .appear.appear-active {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -99,20 +100,25 @@ class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    this.state.video.current.muted = true;
-    this.state.video.current.play();
-  }
-
   render() {
     const { appearHome } = this.state;
+
     return (
       <Styles>
-        <video ref={this.state.video} playsInline loop muted autoPlay preload="auto" poster={SeaBG}>
-          <source src={SeaMP4} type="video/mp4" />
-          <source src={SeaWEBM} type="video/webm" />
-          <source src={SeaOGV} type="video/ogv" />
-        </video>
+        <ReactPlayer
+          id="video"
+          playing
+          loop
+          muted
+          height='0vh'
+          config={ { file: { attributes: { poster: SeaBG } } } }
+          url={[
+            {src: SeaMP4, type: 'video/mp4'},
+            {src: SeaWEBM, type: 'video/webm'},
+            {src: SeaOGV, type: 'video/ogv'},
+          ]}
+        />
+
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
