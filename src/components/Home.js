@@ -3,6 +3,8 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import SeaBG from '../assets/sea.jpg';
 import SeaMP4 from '../assets/sea1.mp4';
+import SeaWEBM from '../assets/sea1.webm';
+import SeaOGG from '../assets/sea1.ogg';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
 
@@ -93,24 +95,17 @@ class Home extends Component {
     super(props);
     this.state = {
       appearHome: true,
-      ref: React.createRef()
     }
   }
-
-  componentDidMount() {
-    if (this.state.ref.current.paused) {
-      this.state.ref.current.play();
-    }
-
-  }
-
 
   render() {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <video ref={this.state.ref} playsInline loop muted preload="auto" poster={SeaBG}>
+        <video playsInline loop muted autoPlay preload="auto" poster={SeaBG}>
           <source src={SeaMP4} type="video/mp4" />
+          <source src={SeaWEBM} type="video/webm" />
+          <source src={SeaOGG} type="video/ogg" />
         </video>
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">

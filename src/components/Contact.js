@@ -33,7 +33,7 @@ const Styles = styled.div`
 
 export const Contact = () => (
   <Styles>
-    <Fade bottom>
+    <Fade>
       <ContactJumbotron />
       <div id="contact-container">
         <h2>Email: <a href="mailto: ejmaltes@me.com">ejmaltes@me.com</a></h2>
