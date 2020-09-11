@@ -8,6 +8,8 @@ import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
 import ReactPlayer from 'react-player';
+import {isMobile } from 'react-device-detect';
+
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
@@ -96,15 +98,24 @@ class Home extends Component {
     super(props);
     this.state = {
       appearHome: true,
-      video: React.createRef()
+      video: React.createRef(),
+      mobile: isMobile
     }
   }
 
   render() {
     const { appearHome } = this.state;
-
-    return (
-      <Styles>
+    const SeaVideo = () => {
+      return this.state.mobile ? (
+        <ReactPlayer
+          id="video"
+          playing
+          loop
+          muted
+          height='0vh'
+          config={ { file: { attributes: { poster: SeaBG } } } }
+        />
+      ) : (
         <ReactPlayer
           id="video"
           playing
@@ -118,7 +129,12 @@ class Home extends Component {
             {src: SeaOGV, type: 'video/ogv'},
           ]}
         />
+      )
+    }
+    return (
+      <Styles>
 
+        <SeaVideo />
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
