@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import WelcomeBG from '../assets/welcome-background.png';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
+import { isMobile } from 'react-device-detect';
 
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
@@ -11,7 +12,7 @@ const Styles = styled.div`
   #welcome-container {
     font-family: "Raleway", sans-serif;
     background: url(${WelcomeBG}) no-repeat fixed;
-    background-size: cover;
+    /* background-size: cover; */
     background-position: 50% 50%;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;          /* Firefox */
@@ -96,7 +97,7 @@ class Home extends Component {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <Container id="welcome-container">
+        <Container id="welcome-container" style={ { backgroundSize: isMobile ? 'auto' : 'cover' } }>
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
             <Nav className="mr-auto">
