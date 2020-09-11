@@ -100,6 +100,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    this.state.video.current.muted = true;
     this.state.video.current.play();
   }
 
