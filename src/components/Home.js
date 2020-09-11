@@ -10,9 +10,14 @@ const Styles = styled.div`
 
   #welcome-container {
     font-family: "Raleway", sans-serif;
-    background: url(${WelcomeBG}) no-repeat fixed center;
+    background: url(${WelcomeBG}) no-repeat fixed;
     background-size: cover;
-    image-rendering: -webkit-optimize-contrast;
+    background-position: 50% 50%;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering: -o-crisp-edges;            /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
+    -ms-interpolation-mode: nearest-neighbor;
     height: 100vh;
     width: 100vw;
     max-width: None;
