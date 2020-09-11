@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SeaBG from '../assets/sea.jpg';
 import SeaMP4 from '../assets/sea1.mp4';
 import SeaWEBM from '../assets/sea1.webm';
-import SeaOGG from '../assets/sea1.ogg';
+import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
 
@@ -100,9 +100,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    if (this.state.video.current.paused) {
-      this.state.video.current.play();
-    }
+    this.state.video.current.play();
   }
 
   render() {
@@ -112,7 +110,7 @@ class Home extends Component {
         <video ref={this.state.video} playsInline loop muted autoPlay preload="auto" poster={SeaBG}>
           <source src={SeaMP4} type="video/mp4" />
           <source src={SeaWEBM} type="video/webm" />
-          <source src={SeaOGG} type="video/ogg" />
+          <source src={SeaOGV} type="video/ogv" />
         </video>
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
