@@ -7,12 +7,14 @@ const Styles = styled.div`
 
   .jumbo {
     display: inline-block;
-    margin: 2.5vh 2.5vw 2.5vh 2.5vw;
+    position: relative;
+    margin: 0px 2.5vw 2.5vh 2.5vw;
     padding: 4vw 2vw 4vw 2vw;
     height: 10vh;
     display: flex;
     align-items: center;
     background-color: white;
+    top: 2.5vh;
   }
 
   #about {

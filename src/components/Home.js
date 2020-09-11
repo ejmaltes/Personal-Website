@@ -1,28 +1,32 @@
 import React, { Component } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-import WelcomeBG from '../assets/welcome-background.png';
+import SeaBG from '../assets/sea.jpg';
+import SeaMP4 from '../assets/sea1.mp4';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
-import { isMobile } from 'react-device-detect';
 
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
   #welcome-container {
     font-family: "Raleway", sans-serif;
-    background: url(${WelcomeBG}) no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    image-rendering: crisp-edges;
-    image-rendering: -moz-crisp-edges;          /* Firefox */
-    image-rendering: -o-crisp-edges;            /* Opera */
-    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
-    -ms-interpolation-mode: nearest-neighbor;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
     width: 100vw;
     max-width: None;
-    z-index: -1;
+    z-index: 5;
+  }
+
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
   }
 
   .big {
@@ -88,8 +92,16 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      appearHome: true
+      appearHome: true,
+      ref: React.createRef()
     }
+  }
+
+  componentDidMount() {
+    if (this.state.ref.current.paused) {
+      this.state.ref.current.play();
+    }
+
   }
 
 
@@ -97,7 +109,10 @@ class Home extends Component {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <Container id="welcome-container" style={ { backgroundAttachment: isMobile ? '' : 'fixed' } }>
+        <video ref={this.state.ref} playsinline loop muted preload="auto" poster={SeaBG}>
+          <source src={SeaMP4} type="video/mp4" />
+        </video>
+        <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
             <Nav className="mr-auto">
