@@ -11,8 +11,8 @@ const Styles = styled.div`
 
   #welcome-container {
     font-family: "Raleway", sans-serif;
-    background: url(${WelcomeBG}) no-repeat fixed;
-    /* background-size: cover; */
+    background: url(${WelcomeBG}) no-repeat;
+    background-size: cover;
     background-position: 50% 50%;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;          /* Firefox */
@@ -97,7 +97,7 @@ class Home extends Component {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <Container id="welcome-container" style={ { backgroundSize: isMobile ? 'auto' : 'cover' } }>
+        <Container id="welcome-container" style={ { backgroundAttachment: isMobile ? '' : 'fixed' } }>
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
             <Nav className="mr-auto">
