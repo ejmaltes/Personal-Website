@@ -95,6 +95,13 @@ class Home extends Component {
     super(props);
     this.state = {
       appearHome: true,
+      video: React.createRef()
+    }
+  }
+
+  componentDidMount() {
+    if (this.state.video.current.paused) {
+      this.state.video.current.play();
     }
   }
 
@@ -102,7 +109,7 @@ class Home extends Component {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <video playsInline loop muted autoPlay preload="auto" poster={SeaBG}>
+        <video ref={this.state.video} playsInline loop muted autoPlay preload="auto" poster={SeaBG}>
           <source src={SeaMP4} type="video/mp4" />
           <source src={SeaWEBM} type="video/webm" />
           <source src={SeaOGG} type="video/ogg" />
