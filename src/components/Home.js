@@ -109,7 +109,7 @@ class Home extends Component {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <video ref={this.state.ref} playsinline loop muted preload="auto" poster={SeaBG}>
+        <video ref={this.state.ref} playsInline loop muted preload="auto" poster={SeaBG}>
           <source src={SeaMP4} type="video/mp4" />
         </video>
         <Container id="welcome-container">
