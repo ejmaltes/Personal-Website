@@ -23,7 +23,7 @@ const Styles = styled.div`
     z-index: 5;
   }
 
-  video {
+  video, #video-poster {
     object-fit: cover;
     width: 100vw;
     height: 100vh;
@@ -107,13 +107,9 @@ class Home extends Component {
     const { appearHome } = this.state;
     const SeaVideo = () => {
       return this.state.mobile ? (
-        <ReactPlayer
-          id="video"
-          playing
-          loop
-          muted
-          height='0vh'
-          config={ { file: { attributes: { poster: SeaBG } } } }
+        <img
+          id="video-poster"
+          src={SeaBG}
         />
       ) : (
         <ReactPlayer
