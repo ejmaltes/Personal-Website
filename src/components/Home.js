@@ -105,10 +105,11 @@ class Home extends Component {
 
   componentDidMount() {
     setTimeout(() => {
+      this.state.video.current.play();
       if (this.state.video.current.paused) {
         this.setState({poster: true})
       }
-    }, 250)
+    }, 500)
 
   }
 
