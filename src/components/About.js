@@ -19,7 +19,7 @@ const Styles = styled.div`
     width: 30vw;
     min-width: 150px;
     margin: 10px;
-    border: solid #8cc4ec 1px;
+    border: solid #333333 1px;
   }
 
   #about-content {

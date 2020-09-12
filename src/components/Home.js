@@ -7,8 +7,6 @@ import SeaWEBM from '../assets/sea1.webm';
 import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
-import ReactPlayer from 'react-player';
-import {isMobile } from 'react-device-detect';
 
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
@@ -115,7 +113,6 @@ class Home extends Component {
 
   render() {
     const { appearHome } = this.state;
-    const htmlString = this.state.html;
     const SeaVideo = () => {
       return this.state.poster ? (
         <img src={SeaBG} id="video-poster" />

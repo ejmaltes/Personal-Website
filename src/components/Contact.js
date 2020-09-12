@@ -16,8 +16,9 @@ const Styles = styled.div`
     height: 85vh;
   }
 
-  footer {
+  #footer {
     text-align: center;
+    margin-top: 30vh;
     font-size: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -41,13 +42,14 @@ export const Contact = () => (
         <h2><a href="https://www.linkedin.com/in/ethanmaltes/">LinkedIn</a></h2>
         <hr />
         <h2><a href="https://github.com/ejmaltes">GitHub</a></h2>
+        <div id="footer">
+          <img src={Icon} />
+          <p>
+            Website icon found <a href="https://www.thedoodlelibrary.com/places/wave">here</a>
+          </p>
+        </div>
       </div>
+
     </Fade>
-    <footer>
-      <img src={Icon} />
-      <p>
-        Website icon found <a href="https://www.thedoodlelibrary.com/places/wave">here</a>
-      </p>
-    </footer>
   </Styles>
 )

@@ -13,29 +13,13 @@ const Styles = styled.div`
     height: 10vh;
     display: flex;
     align-items: center;
+    text-align: center;
     background-color: white;
     top: 2.5vh;
-  }
-
-  #about {
-    border: solid #8cc4ec 1px;
-    color: #8cc4ec;
-  }
-
-  #experiences {
-    border: solid #fcd49c 1px;
-    color: #fcd49c;
-  }
-
-  #contact {
-    border: solid #bcdcf4 1px;
-    color: #bcdcf4;
-  }
-
-  p {
-    margin: 0px;
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #33333;
   }
 `
 
@@ -43,7 +27,7 @@ export const AboutJumbotron = () => (
   <Styles>
     <Jumbo fluid id="about" className="jumbo">
       <Container>
-        <p>About</p>
+        	&#60; About &#62;
       </Container>
     </Jumbo>
   </Styles>
@@ -53,7 +37,7 @@ export const ExperiencesJumbotron = () => (
   <Styles>
     <Jumbo fluid id="experiences" className="jumbo">
       <Container>
-        <p>Experiences</p>
+          &#60; Experiences &#62;
       </Container>
     </Jumbo>
   </Styles>
@@ -63,7 +47,7 @@ export const ContactJumbotron = () => (
   <Styles>
     <Jumbo fluid id="contact" className="jumbo">
       <Container>
-        <p>Contact</p>
+          &#60; Contact &#62;
       </Container>
     </Jumbo>
   </Styles>
