@@ -106,9 +106,9 @@ class Home extends Component {
 
   componentDidMount() {
     setTimeout(() => {
+      this.state.test.current.textContent = String(this.state.video.current.paused);
       if (isMobile && this.state.video.current.paused) {
         this.state.video.current.play();
-        this.state.test.current.textContent = "Mobile";
       }
     }, 500)
 
