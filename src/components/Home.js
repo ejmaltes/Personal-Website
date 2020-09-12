@@ -118,6 +118,7 @@ class Home extends Component {
           loop
           muted
           height='0vh'
+          playsinline
           config={ { file: { attributes: { poster: SeaBG } } } }
           url={[
             {src: SeaMP4, type: 'video/mp4'},
