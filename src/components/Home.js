@@ -104,41 +104,14 @@ class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.state.test.current.textContent = String(this.state.video.current.paused);
-      if (this.state.video.current.paused) {
-        this.state.video.current.play();
-      }
-      this.state.test.current.textContent = String(this.state.video.current.paused);
-    }, 500)
-
-  }
-
-  // <ReactPlayer
-  //   id="video"
-  //   playing
-  //   loop
-  //   muted
-  //   height='0vh'
-  //   playsinline
-  //   config={ { file: { attributes: { poster: SeaBG } } } }
-  //   url={[
-  //     {src: SeaMP4, type: 'video/mp4'},
-  //     {src: SeaWEBM, type: 'video/webm'},
-  //     {src: SeaOGV, type: 'video/ogv'},
-  //   ]}
-  // />
-
   render() {
     const { appearHome } = this.state;
+    const htmlString = `<video autoPlay loop muted><source src=${SeaMP4} type="video/mp4" /><source src=${SeaWEBM} type="video/webm" /><source src=${SeaOGV} type="video/ogv" /></video>`
     return (
       <Styles>
-        <video ref={this.state.video} autoPlay loop muted>
-          <source src={SeaMP4} type="video/mp4" />
-          <source src={SeaWEBM} type="video/webm" />
-          <source src={SeaOGV} type="video/ogv" />
-        </video>
+        <div dangerouslySetInnerHTML={{
+          __html: htmlString
+        }}></div>
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
