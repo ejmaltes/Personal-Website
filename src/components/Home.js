@@ -105,13 +105,8 @@ class Home extends Component {
 
   render() {
     const { appearHome } = this.state;
-    const SeaVideo = () => {
-      return this.state.mobile ? (
-        <img
-          id="video-poster"
-          src={SeaBG}
-        />
-      ) : (
+    return (
+      <Styles>
         <ReactPlayer
           id="video"
           playing
@@ -126,12 +121,6 @@ class Home extends Component {
             {src: SeaOGV, type: 'video/ogv'},
           ]}
         />
-      )
-    }
-    return (
-      <Styles>
-
-        <SeaVideo />
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>

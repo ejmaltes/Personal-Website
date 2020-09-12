@@ -26,7 +26,6 @@ const Styles = styled.div`
     max-height: 75vh;
     width: 60vw;
     margin: 10px 10px 10px 15px;
-    overflow: scroll;
     font-size: 1.5rem;
   }
 
