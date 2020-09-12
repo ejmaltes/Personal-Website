@@ -13,7 +13,6 @@ const Styles = styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 85vh;
   }
 
   #footer {
