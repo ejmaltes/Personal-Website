@@ -106,7 +106,7 @@ class Home extends Component {
 
   render() {
     const { appearHome } = this.state;
-    const htmlString = `<video autoPlay loop muted><source src=${SeaMP4} type="video/mp4" /><source src=${SeaWEBM} type="video/webm" /><source src=${SeaOGV} type="video/ogv" /></video>`
+    const htmlString = `<video playsInline autoPlay loop muted><source src=${SeaMP4} type="video/mp4" /><source src=${SeaWEBM} type="video/webm" /><source src=${SeaOGV} type="video/ogv" /></video>`
     return (
       <Styles>
         <div dangerouslySetInnerHTML={{
