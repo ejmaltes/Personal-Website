@@ -99,19 +99,36 @@ class Home extends Component {
     this.state = {
       appearHome: true,
       video: React.createRef(),
-      test: React.createRef(),
-      mobile: isMobile
+      poster: false
     }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      if (this.state.video.current.paused) {
+        this.setState({poster: true})
+      }
+    }, 250)
+
   }
 
   render() {
     const { appearHome } = this.state;
-    const htmlString = `<video playsInline autoPlay loop muted><source src=${SeaMP4} type="video/mp4" /><source src=${SeaWEBM} type="video/webm" /><source src=${SeaOGV} type="video/ogv" /></video>`
+    const htmlString = this.state.html;
+    const SeaVideo = () => {
+      return this.state.poster ? (
+        <img src={SeaBG} id="video-poster" />
+      ) : (
+        <video ref={this.state.video} playsInline autoPlay loop muted>
+          <source src={SeaMP4} type="video/mp4" />
+          <source src={SeaWEBM} type="video/webm" />
+          <source src={SeaOGV} type="video/ogv" />
+        </video>
+      )
+    }
     return (
       <Styles>
-        <div dangerouslySetInnerHTML={{
-          __html: htmlString
-        }}></div>
+        <SeaVideo />
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
