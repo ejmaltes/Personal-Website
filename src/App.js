@@ -20,6 +20,10 @@ const Styles = styled.div`
     opacity: 0;
     transition: visibility 3s linear, opacity 3s linear;
   }
+
+  #experiences, #contact {
+    margin-top: 15vh;
+  }
 `;
 
 class App extends Component {

@@ -13,7 +13,6 @@ const Styles = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 85vh;
     display: table-row;
   }
 

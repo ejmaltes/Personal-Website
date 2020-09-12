@@ -8,16 +8,20 @@ const Styles = styled.div`
 
   #contact-container {
     font-family: "Raleway", sans-serif;
+  }
+
+  #info {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    height: 60vh;
   }
 
-  #footer {
+  footer {
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 15vh;
     font-size: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -36,19 +40,20 @@ export const Contact = () => (
     <Fade>
       <ContactJumbotron />
       <div id="contact-container">
-        <h2>Email: <a href="mailto: ejmaltes@me.com">ejmaltes@me.com</a></h2>
-        <hr />
-        <h2><a href="https://www.linkedin.com/in/ethanmaltes/">LinkedIn</a></h2>
-        <hr />
-        <h2><a href="https://github.com/ejmaltes">GitHub</a></h2>
-        <div id="footer">
-          <img src={Icon} />
-          <p>
-            Website icon found <a href="https://www.thedoodlelibrary.com/places/wave">here</a>
-          </p>
+        <div id="info">
+          <h2>Email: <a href="mailto: ejmaltes@me.com">ejmaltes@me.com</a></h2>
+          <hr />
+          <h2><a href="https://www.linkedin.com/in/ethanmaltes/">LinkedIn</a></h2>
+          <hr />
+          <h2><a href="https://github.com/ejmaltes">GitHub</a></h2>
         </div>
       </div>
-
+      <footer>
+        <img src={Icon} />
+        <p>
+          Website icon found <a href="https://www.thedoodlelibrary.com/places/wave">here</a>
+        </p>
+      </footer>
     </Fade>
   </Styles>
 )
