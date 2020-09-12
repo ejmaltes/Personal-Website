@@ -99,28 +99,45 @@ class Home extends Component {
     this.state = {
       appearHome: true,
       video: React.createRef(),
+      test: React.createRef(),
       mobile: isMobile
     }
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      if (isMobile && this.state.video.current.paused) {
+        this.state.video.current.play();
+        this.state.test.current.textContent = "Mobile";
+      }
+    }, 500)
+
+  }
+
+  // <ReactPlayer
+  //   id="video"
+  //   playing
+  //   loop
+  //   muted
+  //   height='0vh'
+  //   playsinline
+  //   config={ { file: { attributes: { poster: SeaBG } } } }
+  //   url={[
+  //     {src: SeaMP4, type: 'video/mp4'},
+  //     {src: SeaWEBM, type: 'video/webm'},
+  //     {src: SeaOGV, type: 'video/ogv'},
+  //   ]}
+  // />
 
   render() {
     const { appearHome } = this.state;
     return (
       <Styles>
-        <ReactPlayer
-          id="video"
-          playing
-          loop
-          muted
-          height='0vh'
-          playsinline
-          config={ { file: { attributes: { poster: SeaBG } } } }
-          url={[
-            {src: SeaMP4, type: 'video/mp4'},
-            {src: SeaWEBM, type: 'video/webm'},
-            {src: SeaOGV, type: 'video/ogv'},
-          ]}
-        />
+        <video ref={this.state.video} autoPlay loop muted>
+          <source src={SeaMP4} type="video/mp4" />
+          <source src={SeaWEBM} type="video/webm" />
+          <source src={SeaOGV} type="video/ogv" />
+        </video>
         <Container id="welcome-container">
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
@@ -149,7 +166,7 @@ class Home extends Component {
           >
             <div id="name-container">
               <div id="name">
-                <p>Ethan Maltes</p>
+                <p ref={this.state.test}>Ethan Maltes</p>
               </div>
             </div>
           </CSSTransition>
