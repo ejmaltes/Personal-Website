@@ -89,6 +89,10 @@ const Styles = styled.div`
     transform: scale(1) translateY(0);
     transition: opacity 500ms linear 500ms, transform 500ms ease-in-out 500ms;
   }
+  
+  .nav-link {
+    cursor: pointer;
+  }
 `;
 
 class Home extends Component {
@@ -117,7 +121,7 @@ class Home extends Component {
       return this.state.poster ? (
         <img src={SeaBG} id="video-poster" />
       ) : (
-        <video ref={this.state.video} playsInline autoPlay loop muted>
+        <video poster={SeaBG} ref={this.state.video} playsInline autoPlay loop muted>
           <source src={SeaMP4} type="video/mp4" />
           <source src={SeaWEBM} type="video/webm" />
           <source src={SeaOGV} type="video/ogv" />
@@ -131,21 +135,18 @@ class Home extends Component {
           <Navbar className="transparent" variant="dark">
             <Navbar.Brand href="#">EJM</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link>
-                <Link activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-                  About
-                </Link>
-              </Nav.Link>
-              <Nav.Link href="#">
-                <Link activeClass="active" to="experiences" spy={true} smooth={true} duration={1000}>
-                  Experiences
-                </Link>
-              </Nav.Link>
-              <Nav.Link href="#">
-                <Link activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
-                  Contact
-                </Link>
-              </Nav.Link>
+              <Link className="nav-link" activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
+                About
+              </Link>
+              <Link className="nav-link" activeClass="active" to="experiences" spy={true} smooth={true} duration={1000}>
+                Experiences
+              </Link>
+              <Link className="nav-link" activeClass="active" to="projects" spy={true} smooth={true} duration={1000}>
+                Projects
+              </Link>
+              <Link className="nav-link" activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
+                Contact
+              </Link>
             </Nav>
           </Navbar>
           <CSSTransition

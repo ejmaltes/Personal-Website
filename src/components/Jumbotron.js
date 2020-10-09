@@ -43,6 +43,16 @@ export const ExperiencesJumbotron = () => (
   </Styles>
 )
 
+export const ProjectsJumbotron = () => (
+  <Styles>
+    <Jumbo fluid id="contact" className="jumbo">
+      <Container>
+          &#60; Projects &#62;
+      </Container>
+    </Jumbo>
+  </Styles>
+)
+
 export const ContactJumbotron = () => (
   <Styles>
     <Jumbo fluid id="contact" className="jumbo">

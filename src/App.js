@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './components/Home.js';
 import About from './components/About.js';
 import { Experiences } from './components/Experiences.js';
+import { Projects } from './components/Projects.js';
 import { Contact } from './components/Contact.js';
 import { Element } from 'react-scroll';
 import styled from 'styled-components';
@@ -42,6 +43,9 @@ class App extends Component {
                 </Element>
                 <Element name='experiences' id='experiences'>
                   <Experiences />
+                </Element>
+                <Element name='projects' id='projects'>
+                  <Projects />
                 </Element>
                 <Element name='contact' id='contact'>
                   <Contact />
