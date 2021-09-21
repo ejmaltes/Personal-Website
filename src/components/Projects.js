@@ -42,7 +42,7 @@ export const Projects = () => (
           <Card.Body>
             <Card.Title>This Website</Card.Title>
             <Card.Text>
-              A static website built with using React and Bootstrap, and deployed using AWS Amplify.
+              A static website built using React and Bootstrap, and deployed using AWS Amplify.
             </Card.Text>
             <Card.Link href="https://github.com/ejmaltes/Personal-Website">Github</Card.Link>
           </Card.Body>

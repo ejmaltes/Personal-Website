@@ -2,7 +2,7 @@ import React from 'react';
 import { AboutJumbotron } from './Jumbotron.js';
 import styled from 'styled-components';
 import { Image } from 'react-bootstrap';
-import AboutIMG from '../assets/me-space-1.png';
+import AboutIMG from '../assets/me-cropped.png';
 import Fade from 'react-reveal/Fade';
 const Styles = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
@@ -18,7 +18,7 @@ const Styles = styled.div`
     width: 30vw;
     min-width: 150px;
     margin: 10px;
-    border: solid #333333 1px;
+    /* border: solid #333333 1px; */
   }
 
   #about-content {

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import SeaBG from '../assets/sea.jpg';
-import SeaMP4 from '../assets/sea2.mp4';
-import SeaWEBM from '../assets/sea1.webm';
-import SeaOGV from '../assets/sea1.ogv';
+import SeaMP4 from '../assets/sea.mp4';
+// import SeaWEBM from '../assets/sea1.webm';
+// import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
 import { CSSTransition } from "react-transition-group";
 
@@ -122,8 +122,6 @@ class Home extends Component {
       ) : (
         <video poster={SeaBG} ref={this.state.video} playsInline autoPlay loop muted>
           <source src={SeaMP4} type="video/mp4" />
-          <source src={SeaWEBM} type="video/webm" />
-          <source src={SeaOGV} type="video/ogv" />
         </video>
       )
     }
