@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import SeaBG from '../assets/sea.jpg';
-import SeaMP4 from '../assets/sea.mp4';
+import SeaMP4 from '../assets/sea-short.mp4';
 // import SeaWEBM from '../assets/sea1.webm';
 // import SeaOGV from '../assets/sea1.ogv';
 import { Link } from 'react-scroll';
